@@ -45,10 +45,10 @@
                         </goals>
                     </execution>
                     <execution>
-                        <id>check</id>
+                        <id>report</id>
                         <phase>verify</phase>
                         <goals>
-                            <goal>check</goal>
+                            <goal>report</goal>
                         </goals>
                     </execution>
 
