@@ -2,14 +2,22 @@ package ru.netology;
 
 public class Radio {
     private int currentRadioStation;
-    int minNumber = 0;
-    int maxNumber = 9;
+    private int minNumber = 0;
+    private int maxNumber = 9;
     private int soundVolume;
-    int minVolume = 0;
-    int maxVolume = 10;
+    private int minVolume = 0;
+    private int maxVolume = 10;
 
     public void setCurrentRadioStation(int newCurrentRadioStation) {
+
         currentRadioStation = newCurrentRadioStation;
+        if (currentRadioStation > maxNumber) {
+            return;
+        }
+        if (currentRadioStation < minNumber) {
+            return;
+        }
+        this.currentRadioStation = currentRadioStation;
     }
 
     public int getCurrentRadioStation() {
@@ -18,6 +26,13 @@ public class Radio {
 
     public void setSoundVolume(int newSoundVolume) {
         soundVolume = newSoundVolume;
+        if(soundVolume > maxVolume) {
+            return;
+        }
+        if (soundVolume < minVolume) {
+            return;
+        }
+        this.soundVolume = soundVolume;
     }
 
     public int getSoundVolume() {
@@ -27,7 +42,7 @@ public class Radio {
 
 
     // Операция next
-    public void NextRadioStation() {
+    public void nextRadioStation() {
 
         if (currentRadioStation < maxNumber) {
             currentRadioStation = currentRadioStation + 1;
@@ -37,7 +52,7 @@ public class Radio {
     }
 
     //Операция prev
-    public void PrevRadioStation() {
+    public void prevRadioStation() {
         if (currentRadioStation > minNumber) {
             currentRadioStation = currentRadioStation - 1;
         } else {
@@ -46,13 +61,9 @@ public class Radio {
     }
 
 
-    //Ввод номера радиостанции
-   public void SelectRadioStation() {
-        return;
-   }
 
    // Увеличение +
-   public void MaxVolumeLevel() {
+   public void maxVolumeLevel() {
 
        if (soundVolume >= maxVolume) {
            soundVolume = maxVolume;
@@ -62,7 +73,7 @@ public class Radio {
    }
 
     // Уменьшение -
-    public void MinVolumeLevel() {
+    public void minVolumeLevel() {
 
         if (soundVolume <= minVolume) {
             soundVolume = minVolume;

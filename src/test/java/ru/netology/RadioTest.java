@@ -10,7 +10,7 @@ class RadioTest {
     void shouldSwitchNextRadioStation() {
         Radio radioStation = new Radio ();
         radioStation.setCurrentRadioStation(9);
-        radioStation.NextRadioStation();
+        radioStation.nextRadioStation();
 
         int expected = 0;
         int actual = radioStation.getCurrentRadioStation();
@@ -22,7 +22,7 @@ class RadioTest {
     void shouldSwitchPrevRadioStation() {
         Radio radioStation = new Radio ();
         radioStation.setCurrentRadioStation(0);
-        radioStation.PrevRadioStation();
+        radioStation.prevRadioStation();
 
         int expected = 9;
         int actual = radioStation.getCurrentRadioStation();
@@ -34,7 +34,6 @@ class RadioTest {
     void shouldChooseRadioStation() {
         Radio radioStation = new Radio();
         radioStation.setCurrentRadioStation(2);
-        radioStation.SelectRadioStation();
 
         int expected = 2;
         int actual = radioStation.getCurrentRadioStation();
@@ -46,7 +45,7 @@ class RadioTest {
     void shouldIncreaseSoundVolume() {
         Radio radioStation = new Radio();
         radioStation.setSoundVolume(10);
-        radioStation.MaxVolumeLevel();
+        radioStation.maxVolumeLevel();
 
         int expected = 10;
         int actual = radioStation.getSoundVolume();
@@ -58,7 +57,7 @@ class RadioTest {
     void shouldDecreaseSoundVolume() {
         Radio radioStation = new Radio();
         radioStation.setSoundVolume(0);
-        radioStation.MinVolumeLevel();
+        radioStation.minVolumeLevel();
 
         int expected = 0;
         int actual = radioStation.getSoundVolume();
