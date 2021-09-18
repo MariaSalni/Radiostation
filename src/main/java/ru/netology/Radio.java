@@ -2,11 +2,35 @@ package ru.netology;
 
 public class Radio {
     private int currentRadioStation;
+    private int amountStation = 10;
     private int minNumber = 0;
     private int maxNumber = 9;
     private int soundVolume;
     private int minVolume = 0;
-    private int maxVolume = 10;
+    private int maxVolume = 100;
+
+    // конструктор на переключение радиостанций и звука
+
+
+    public Radio(int currentRadioStation, int amountStation, int minNumber, int maxNumber, int soundVolume, int minVolume, int maxVolume) {
+        this.currentRadioStation = currentRadioStation;
+        this.amountStation = amountStation;
+        this.minNumber = minNumber;
+        this.maxNumber = maxNumber;
+        this.soundVolume = soundVolume;
+        this.minVolume = minVolume;
+        this.maxVolume = maxVolume;
+    }
+
+
+
+// создаем конструктор без параметров
+
+    public Radio () {
+
+    }
+
+
 
     public void setCurrentRadioStation(int newCurrentRadioStation) {
 
@@ -22,6 +46,22 @@ public class Radio {
 
     public int getCurrentRadioStation() {
         return currentRadioStation;
+    }
+
+    public void setAmountStation(int newAmountStation) {
+
+        amountStation = newAmountStation;
+        if (amountStation > 10) {
+            return;
+        }
+        if (amountStation < 1) {
+            return;
+        }
+        this.amountStation = amountStation;
+    }
+
+    public int getAmountStation() {
+        return amountStation;
     }
 
     public void setSoundVolume(int newSoundVolume) {

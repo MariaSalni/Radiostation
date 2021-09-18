@@ -8,61 +8,49 @@ class RadioTest {
 
     @Test
     void shouldSwitchNextRadioStation() {
-        Radio radioStation = new Radio ();
-        radioStation.setCurrentRadioStation(9);
+        Radio radioStation = new Radio (9, 10,0, 9, 50, 0, 100);
         radioStation.nextRadioStation();
-
-        int expected = 0;
-        int actual = radioStation.getCurrentRadioStation();
-
-        assertEquals(expected, actual);
+        assertEquals(0, radioStation.getCurrentRadioStation());
     }
 
     @Test
     void shouldSwitchPrevRadioStation() {
-        Radio radioStation = new Radio ();
-        radioStation.setCurrentRadioStation(0);
+        Radio radioStation = new Radio (0, 10, 0, 9, 50, 0, 100);
         radioStation.prevRadioStation();
 
-        int expected = 9;
-        int actual = radioStation.getCurrentRadioStation();
-
-        assertEquals(expected, actual);
+        assertEquals(9, radioStation.getCurrentRadioStation());
     }
 
     @Test
     void shouldChooseRadioStation() {
-        Radio radioStation = new Radio();
-        radioStation.setCurrentRadioStation(2);
+        Radio radioStation = new Radio(2, 10, 0, 9, 50, 0, 100);
 
-        int expected = 2;
-        int actual = radioStation.getCurrentRadioStation();
-
-        assertEquals(expected, actual);
+        assertEquals(2, radioStation.getCurrentRadioStation());
     }
 
     @Test
     void shouldIncreaseSoundVolume() {
-        Radio radioStation = new Radio();
-        radioStation.setSoundVolume(10);
+        Radio radioStation = new Radio(9, 10,0, 10, 50, 0, 100);
         radioStation.maxVolumeLevel();
 
-        int expected = 10;
-        int actual = radioStation.getSoundVolume();
-        assertEquals(expected, actual);
+        assertEquals(51, radioStation.getSoundVolume());
 
     }
 
     @Test
     void shouldDecreaseSoundVolume() {
-        Radio radioStation = new Radio();
-        radioStation.setSoundVolume(0);
+        Radio radioStation = new Radio(9, 10, 0, 9, 50, 0, 100);
         radioStation.minVolumeLevel();
 
-        int expected = 0;
-        int actual = radioStation.getSoundVolume();
-        assertEquals(expected, actual);
+        assertEquals(49, radioStation.getSoundVolume());
 
+    }
+
+    @Test
+    void shouldNoArgsConstructor() {
+        Radio radioStation = new Radio();
+
+        assertEquals(10, radioStation.getAmountStation());
     }
 
 }
