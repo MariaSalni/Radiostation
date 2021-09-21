@@ -9,10 +9,10 @@ class RadioTest {
     @Test
     void shouldSwitchNextRadioStation() {
         Radio radioStation = new Radio ();
-        radioStation.setCurrentRadioStation(9);
+        radioStation.setCurrentRadioStation(8);
         radioStation.nextRadioStation();
 
-        int expected = 0;
+        int expected = 9;
         int actual = radioStation.getCurrentRadioStation();
 
         assertEquals(expected, actual);
@@ -33,9 +33,9 @@ class RadioTest {
     @Test
     void shouldChooseRadioStation() {
         Radio radioStation = new Radio();
-        radioStation.setCurrentRadioStation(2);
+        radioStation.setCurrentRadioStation(0);
 
-        int expected = 2;
+        int expected = 0;
         int actual = radioStation.getCurrentRadioStation();
 
         assertEquals(expected, actual);
@@ -44,10 +44,10 @@ class RadioTest {
     @Test
     void shouldIncreaseSoundVolume() {
         Radio radioStation = new Radio();
-        radioStation.setSoundVolume(10);
+        radioStation.setSoundVolume(2);
         radioStation.maxVolumeLevel();
 
-        int expected = 10;
+        int expected = 3;
         int actual = radioStation.getSoundVolume();
         assertEquals(expected, actual);
 

@@ -44,10 +44,10 @@ public class Radio {
     // Операция next
     public void nextRadioStation() {
 
-        if (currentRadioStation < maxNumber) {
-            currentRadioStation = currentRadioStation + 1;
-        } else {
+        if (currentRadioStation >= maxNumber) {
             currentRadioStation = minNumber;
+        } else {
+        currentRadioStation = currentRadioStation + 1;
         }
     }
 
@@ -65,22 +65,32 @@ public class Radio {
    // Увеличение +
    public void maxVolumeLevel() {
 
-       if (soundVolume >= maxVolume) {
-           soundVolume = maxVolume;
-       } else {
+       if (soundVolume < maxVolume) {
            soundVolume = soundVolume + 1;
        }
    }
 
+   //if (soundVolume >= maxVolume) {
+     //   soundVolume = maxVolume;
+    //} else {
+    //    soundVolume = soundVolume + 1;
+//    }
+//}
+
     // Уменьшение -
     public void minVolumeLevel() {
 
-        if (soundVolume <= minVolume) {
-            soundVolume = minVolume;
-        } else {
+        if (soundVolume > minVolume) {
             soundVolume = soundVolume - 1;
         }
     }
+
+    //if (soundVolume <= minVolume) {
+     //   soundVolume = minVolume;
+    //} else {
+    //    soundVolume = soundVolume - 1;
+    //}
+//}
 }
 
 
