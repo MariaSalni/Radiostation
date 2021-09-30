@@ -9,10 +9,10 @@ class RadioTest {
     @Test
     void shouldSwitchNextRadioStation() {
         Radio radioStation = new Radio ();
-        radioStation.setCurrentRadioStation(8);
+        radioStation.setCurrentRadioStation(9);
         radioStation.nextRadioStation();
 
-        int expected = 9;
+        int expected = 0;
         int actual = radioStation.getCurrentRadioStation();
 
         assertEquals(expected, actual);
@@ -21,10 +21,10 @@ class RadioTest {
     @Test
     void shouldSwitchPrevRadioStation() {
         Radio radioStation = new Radio ();
-        radioStation.setCurrentRadioStation(0);
+        radioStation.setCurrentRadioStation(9);
         radioStation.prevRadioStation();
 
-        int expected = 9;
+        int expected = 8;
         int actual = radioStation.getCurrentRadioStation();
 
         assertEquals(expected, actual);
@@ -33,7 +33,7 @@ class RadioTest {
     @Test
     void shouldChooseRadioStation() {
         Radio radioStation = new Radio();
-        radioStation.setCurrentRadioStation(0);
+        radioStation.setCurrentRadioStation(10);
 
         int expected = 0;
         int actual = radioStation.getCurrentRadioStation();
@@ -44,10 +44,10 @@ class RadioTest {
     @Test
     void shouldIncreaseSoundVolume() {
         Radio radioStation = new Radio();
-        radioStation.setSoundVolume(2);
+        radioStation.setSoundVolume(-10);
         radioStation.maxVolumeLevel();
 
-        int expected = 3;
+        int expected = 1;
         int actual = radioStation.getSoundVolume();
         assertEquals(expected, actual);
 
@@ -56,7 +56,7 @@ class RadioTest {
     @Test
     void shouldDecreaseSoundVolume() {
         Radio radioStation = new Radio();
-        radioStation.setSoundVolume(0);
+        radioStation.setSoundVolume(-1);
         radioStation.minVolumeLevel();
 
         int expected = 0;

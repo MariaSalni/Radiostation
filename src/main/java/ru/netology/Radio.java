@@ -8,9 +8,7 @@ public class Radio {
     private int minVolume = 0;
     private int maxVolume = 10;
 
-    public void setCurrentRadioStation(int newCurrentRadioStation) {
-
-        currentRadioStation = newCurrentRadioStation;
+    public void setCurrentRadioStation(int currentRadioStation) {
         if (currentRadioStation > maxNumber) {
             return;
         }
@@ -24,9 +22,8 @@ public class Radio {
         return currentRadioStation;
     }
 
-    public void setSoundVolume(int newSoundVolume) {
-        soundVolume = newSoundVolume;
-        if(soundVolume > maxVolume) {
+    public void setSoundVolume(int soundVolume) {
+        if (soundVolume > maxVolume) {
             return;
         }
         if (soundVolume < minVolume) {
@@ -40,58 +37,55 @@ public class Radio {
     }
 
 
-
     // Операция next
     public void nextRadioStation() {
 
-        if (currentRadioStation >= maxNumber) {
+        if (currentRadioStation == maxNumber) {
             currentRadioStation = minNumber;
+
         } else {
-        currentRadioStation = currentRadioStation + 1;
+            currentRadioStation = currentRadioStation + 1;
         }
-    }
+
+     }
+
+
 
     //Операция prev
     public void prevRadioStation() {
-        if (currentRadioStation > minNumber) {
-            currentRadioStation = currentRadioStation - 1;
-        } else {
+        if (currentRadioStation == minNumber) {
             currentRadioStation = maxNumber;
+        } else {
+            currentRadioStation = currentRadioStation - 1;
         }
     }
 
+        // Увеличение +
+        public void maxVolumeLevel () {
 
-
-   // Увеличение +
-   public void maxVolumeLevel() {
-
-       if (soundVolume < maxVolume) {
-           soundVolume = soundVolume + 1;
-       }
-   }
-
-   //if (soundVolume >= maxVolume) {
-     //   soundVolume = maxVolume;
-    //} else {
-    //    soundVolume = soundVolume + 1;
-//    }
-//}
-
-    // Уменьшение -
-    public void minVolumeLevel() {
-
-        if (soundVolume > minVolume) {
-            soundVolume = soundVolume - 1;
+            if (soundVolume == maxVolume) {
+                soundVolume = maxVolume;
+            }
+            else {
+                soundVolume = soundVolume + 1;
+            }
         }
+
+
+
+        // Уменьшение -
+        public void minVolumeLevel () {
+
+            if (soundVolume == minVolume) {
+                soundVolume = minVolume;
+            } else {
+                soundVolume = soundVolume - 1;
+            }
+        }
+
+
     }
 
-    //if (soundVolume <= minVolume) {
-     //   soundVolume = minVolume;
-    //} else {
-    //    soundVolume = soundVolume - 1;
-    //}
-//}
-}
 
 
 
