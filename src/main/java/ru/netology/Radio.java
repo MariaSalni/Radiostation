@@ -87,5 +87,19 @@ public class Radio {
     }
 
 
+        // Уменьшение -
+        public void minVolumeLevel () {
+
+            if (soundVolume == minVolume) {
+                soundVolume = minVolume;
+            } else {
+                soundVolume = soundVolume - 1;
+            }
+        }
+
+
+    }
+
+
 
 
